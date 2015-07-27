@@ -1,0 +1,168 @@
+<html>
+  <head>
+    <title>Kiko Mizuhara</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="./js/jquery.scrollTo-1.4.2-min.js"></script>
+    <script type="text/javascript" src="./js/respond.min.js"></script>
+    <script src="./js/jquery.masonry.min.js"></script>
+
+  <script>
+  $(document).ready(function() {
+    var $win = $(window),
+    $ad = $('#abgne_float_ad').css('opacity', 0).show(),  // 讓廣告區塊變透明且顯示出來
+    _width = $ad.width(),
+    _height = $ad.height(),
+    _diffY = 20, _diffX = 20, // 距離右及下方邊距
+    _moveSpeed = 800; // 移動的速度
+ 
+  // 先把 #abgne_float_ad 移動到定點
+  $ad.css({
+    top: $(document).height(),
+    left: $win.width() - _width - _diffX,
+    opacity: 1
+  });
+ 
+  // 幫網頁加上 scroll 及 resize 事件
+  $win.bind('scroll resize', function(){
+    var $this = $(this);
+ 
+    // 控制 #abgne_float_ad 的移動
+    $ad.stop().animate({
+      top: $this.scrollTop() + $this.height() - _height - _diffY,
+      left: $this.scrollLeft() + $this.width() - _width - _diffX
+    }, _moveSpeed);
+  }).scroll();
+
+    $('#menu a').click(function () {
+      $('#wrapper').scrollTo($(this).attr('href'), 1000);
+      return false;
+    });
+
+    $('#container').masonry({
+      // options
+      itemSelector : '.item',
+      columnWidth : 150
+    });  
+
+    $('.img_left a').click(function () {
+      $('#wrapper').scrollTo($(this).attr('href'), 1000);
+      return false;
+    });
+    $('.img_right a').click(function () {
+      $('#wrapper').scrollTo($(this).attr('href'), 1000);
+      return false;
+    });
+  });
+  </script>
+  </head>
+
+  <body>
+    <div id="header"><!--HEADER-->
+      <ul id="menu">
+        <li> <a href="#clothes">衣服</a></li>
+        <li> <a href="#bags">背包</a></li>
+        <li> <a href="#mobile">行動周邊商品</a></li>
+        <li> <a href="#equipment">文具與生活精品</a></li>
+        <li> <a href="#cuuuccu">杯子</a></li>  
+      </ul>
+    </div><!--HEADER結束-->
+
+    <div id="wrapper">
+      <ul id="mask">
+
+        <li id="clothes" class="box">
+          <div class="content">
+            <div class="item"><img src="images/A01.jpg"></div>
+            <div class="item"><img src="images/A02.jpg"></div>
+            <div class="item"><img src="images/A03.jpg"></div>
+            <div class="item"><img src="images/A04.jpg"></div>
+            <div class="item"><img src="images/A05.jpg"></div>
+            <div class="item"><img src="images/A06.jpg"></div>
+            <div class="item"><img src="images/A07.jpg"></div>
+            <div class="item"><img src="images/A08.jpg"></div>
+          </div>
+          <div class="img_right">
+            <a href="#bags"><img src="./image/right.png" width="150px;"></a>
+          </div>
+        </li>
+
+        <li id="bags" class="box">
+          <div class="img_left">
+            <a href="#clothes"><img src="./image/left.png" width="150px;"></a>
+          </div>
+          <div class="content">
+            <div class="item"><img src="images/B01.jpg"></div>
+            <div class="item"><img src="images/B02.jpg"></div>
+            <div class="item"><img src="images/B03.jpg"></div>
+            <div class="item"><img src="images/B04.jpg"></div>
+            <div class="item"><img src="images/B05.jpg"></div>
+            <div class="item"><img src="images/B06.jpg"></div>
+            <div class="item"><img src="images/B07.jpg"></div>
+          </div>
+          <div class="img_right">
+            <a href="#mobile"><img src="./image/right.png" width="150px;"></a>
+          </div>
+        </li>
+
+        <li id="mobile" class="box">
+          <div class="img_left">
+            <a href="#bags"><img src="./image/left.png" width="150px;"></a>
+          </div>
+          <div class="content">
+            <div class="item"><img src="images/C01.jpg"></div>
+            <div class="item"><img src="images/C02.jpg"></div>
+          </div>
+          <div class="img_right">
+            <a href="#equipment"><img src="./image/right.png" width="150px;"></a>
+          </div>
+        </li>
+
+        <li id="equipment" class="box">
+          <div class="img_left">
+            <a href="#mobile"><img src="./image/left.png" width="150px;"></a>
+          </div>
+          <div class="content">
+            <div class="item"><img src="images/D01.jpg"></div>
+            <div class="item"><img src="images/D02.jpg"></div>
+            <div class="item"><img src="images/D03.jpg"></div>
+            <div class="item"><img src="images/D04.jpg"></div>
+            <div class="item"><img src="images/D05.jpg"></div>
+            <div class="item"><img src="images/D06.jpg"></div>
+            <div class="item"><img src="images/D07.jpg"></div>
+            <div class="item"><img src="images/D08.jpg"></div>
+          </div>
+          <div class="img_right">
+            <a href="#cuuuccu"><img src="./image/right.png" width="150px;"></a>
+          </div>
+        </li>
+
+        <li id="cuuuccu" class="box">
+          <div class="img_left">
+            <a href="#equipment"><img src="./image/left.png" width="150px;"></a>
+          </div>
+          <div class="content">
+            <div class="item"><img src="images/E01.jpg"></div>
+            <div class="item"><img src="images/E02.jpg"></div>
+            <div class="item"><img src="images/E03.jpg"></div>
+            <div class="item"><img src="images/E04.jpg"></div>
+            <div class="item"><img src="images/E05.jpg"></div>
+            <div class="item"><img src="images/E06.jpg"></div>
+            <div class="item"><img src="images/E07.jpg"></div>
+            <div class="item"><img src="images/E08.jpg"></div>
+            <div class="item"><img src="images/E09.jpg"></div>
+            <div class="item"><img src="images/E10.jpg"></div>
+            <div class="item"><img src="images/E11.jpg"></div>
+            <div class="item"><img src="images/E12.jpg"></div>
+            <div class="item"><img src="images/E13.jpg"></div>
+            <div class="item"><img src="images/E14.jpg"></div>
+            <div class="item"><img src="images/E15.jpg"></div>
+          </div>
+        </li>
+        
+       </ul><!-- end mask -->
+    </div><!-- end wrapper -->
+  </body>
+</html>

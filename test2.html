@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <title>FunTaipei</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="./image/reset.css">
+
+    <style>
+      body {
+        width:100%;
+        background-color: #D8D5D2;
+        overflow:hidden;
+      }
+      #header{
+        width:100%;
+        height:100px;
+        background:url(./image/head_bg.png);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="header"><!--HEADER-->
+      <div class="site-nav">
+        <div class="container">
+          <ol class="site-nav__list">
+            <li class="site-nav__item site-nav__item--faq"> <a href="#all">全部</a></li>
+            <li class="site-nav__item site-nav__item--layout"> <a href="#clothes">衣服</a></li>
+            <li class="site-nav__item site-nav__item--options"> <a href="#bags">背包</a></li>
+            <li class="site-nav__item site-nav__item--methods"> <a href="#mobile">行動周邊商品</a></li>
+            <li class="site-nav__item site-nav__item--events"> <a href="#equipment">文具與生活精品</a></li>
+            <li class="site-nav__item site-nav__item--appendix"> <a href="#cup">杯子</a></li>
+          </ol>
+        </div>
+      </div>
+    </div><!--HEADER結束-->
+
+    <div id="wrapper">
+        <ul id="mask">
+            <li id="all" class="box"><!--首頁 -->
+                <div class="content">
+                  <div align="center"><img src="./images/A01.jpg"></div>
+                </div>
+            </li><!--首頁結束 -->
+
+            <li id="clothes" class="box"><!--FIRST-->
+              <div class="content">
+                  <div align="center"><img src="./images/A02.jpg"></div>
+              </div>
+            </li>   
+          <li id="bags" class="box"><!--SECEND-->
+            <div class="content">
+              <div align="center"><img src="./images/A03.jpg"></div>
+          </li>
+        </ul><!-- end mask -->
+    </div><!-- end wrapper -->
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="./image/jquery.mousewheel.js"></script>
+  <script type="text/javascript" src="./image/jquery.scrollTo-1.4.2-min.js"></script>
+  <script type="text/javascript" src="./image/respond.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('#site-nav__list a').click(function () {
+      $('#wrapper').scrollTo($(this).attr('href'), 1000);
+      return false;
+    });  
+  });
+  </script>
+</html>
